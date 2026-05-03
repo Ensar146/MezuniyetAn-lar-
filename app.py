@@ -3,12 +3,16 @@ import random
 import sqlite3
 import os
 import uuid
+import os
+
+port = int(os.environ.get("PORT", 8080))
+app.run(host="0.0.0.0", port=port)
 
 app = Flask(__name__)
 
 os.makedirs("static/uploads", exist_ok=True)
 
-# DB INIT
+
 def init_db():
     conn = sqlite3.connect("data.db")
     c = conn.cursor()
@@ -25,7 +29,7 @@ def init_db():
     conn.commit()
     conn.close()
 
-# DB INSERT
+
 def add_message(key, text, image):
     conn = sqlite3.connect("data.db")
     c = conn.cursor()
@@ -38,7 +42,7 @@ def add_message(key, text, image):
     conn.commit()
     conn.close()
 
-# DB GET
+
 def get_messages(key):
     conn = sqlite3.connect("data.db")
     c = conn.cursor()
@@ -49,7 +53,7 @@ def get_messages(key):
     conn.close()
     return data
 
-# KEY OLUŞTUR
+
 @app.route("/cindex")
 def create_random_key():
     Random_key = "".join(str(random.randint(1, 9)) for _ in range(9))
@@ -63,10 +67,10 @@ def index():
 def bindex():
     return render_template("bindex.html")
 
-# KAYDET
+
 @app.route("/save", methods=["POST"])
 def save():
-    key = request.form["key"]   # 🔥 ARTIK SESSION YOK
+    key = request.form["key"]   
     text = request.form["text"]
     file = request.files.get("image")
 
@@ -78,7 +82,7 @@ def save():
 
     add_message(key, text, image_path)
 
-    return f"Kaydedildi! Key: {key}"  # kullanıcı görsün
+    return f"Kaydedildi! Key: {key}"  
 
 @app.route("/debug")
 def debug():
@@ -89,7 +93,7 @@ def debug():
     conn.close()
     return str(data)
 
-# SAYFALAR
+
 @app.route("/endix")
 def endix():
     return render_template("endix.html")
@@ -98,7 +102,6 @@ def endix():
 def dindex():
     return render_template("dindex.html")
 
-# GÖRÜNTÜLE
 @app.route("/view", methods=["POST"])
 def view():
     key = request.form["key"]
