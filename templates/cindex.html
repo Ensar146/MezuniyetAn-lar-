@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnıSaklayıcı</title>
+    <link rel="stylesheet" href="/static/stylesheet.css">
+</head>
+<body>
+
+<h1 class="baslik1">Sonradan erişebilmeniz için kodunuz:</h1>
+<p class="kod">{{ Random_key }}</p>
+
+<form action="/save" method="POST" enctype="multipart/form-data">
+
+    <!-- TEXT -->
+    <input class="Metin" type="text" name="text" placeholder="Bir şey yaz">
+
+    <!-- IMAGE -->
+    <div class="upload-box">
+        <label>
+            📤 Görsel Yükle
+            <input type="file" name="image" id="gorselsonuc">
+        </label>
+    </div>
+
+    <!-- KEY -->
+    <input type="hidden" name="key" value="{{ Random_key }}">
+
+    <button type="submit">Kaydet</button>
+
+</form>
+
+</body>
+</html>

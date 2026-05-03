@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anılarınız</title>
+    <link rel="stylesheet" href="/static/stylesheet.css">
+</head>
+<body>
+
+<h2>Anılarınız</h2>
+
+{% for text, image in data %}
+
+    {% if text %}
+        <p class="finaltext">{{ text }}</p>
+    {% endif %}
+
+    {% if image %}
+    <img src="{{ url_for('static', filename=image.split('static/')[1]) }}" width="200">
+    {% endif %}
+
+    <hr>
+
+{% endfor %}
+
+</body>
+</html>
+
+

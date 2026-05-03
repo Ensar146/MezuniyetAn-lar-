@@ -1,0 +1,132 @@
+body{
+    background: linear-gradient(to right , #0B0B0B, #D4AF37, #FFFFFF);
+}
+
+.baslik1{
+    text-align: center;
+    color:cornsilk;
+}
+
+.M1{
+    text-align: left ;
+    font-size: 24px;
+    
+}
+
+button{
+    border-radius: 0px;
+    width: 200px;
+    height: 75px;
+    background: linear-gradient(to right, brown, darkblue, black);
+    color:cornflowerblue;
+    
+}
+
+.Agir{
+    margin-left: auto;
+    display: block;
+    position: relative;
+    top: -140px;
+
+ 
+}
+
+.Sınıf{
+    display: block;
+    margin: 0 auto;
+    
+    width: 350px;
+    height: 35px;
+
+    color: black;
+    background: linear-gradient(to right, purple, white, yellow, white)
+
+}
+
+.AoluşturOnayla{
+    width: 150px;
+    height: 50px;
+    border-radius: 800px;
+    background: linear-gradient(to left, white, black);
+
+    display: block;
+    margin: 0 auto;
+
+    margin-top: 40px;
+    
+    
+}
+
+.kod{
+    text-align: center;
+    font-size: 34px;
+}
+
+.Metin{
+    display: block;
+    margin: 0 auto;
+    
+    width: 350px;
+    height: 35px;
+
+    color: black;
+    background: linear-gradient(to right bottom, white,black)
+}
+
+
+.upload-box {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    width: 250px;
+}
+
+.upload-box label {
+    display: block;
+    padding: 20px;
+    border: 2px dashed #38bdf8;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+justify-content: center;
+align-items: center;
+    
+}
+
+.upload-box label:hover {
+    background: #0f172a;
+}
+
+.upload-box input {
+    display: none;
+}
+
+.line {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100vh;
+  background: black;
+}
+
+#sonuc {
+    color: white;
+}
+
+.Baslik2{
+    text-align: center;
+    color: black;
+    
+}
+
+.Kodgir{
+    background: linear-gradient(to right black,white,purple);
+}
+
+.finaltext{
+    color: white;
+}
